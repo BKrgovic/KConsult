@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}{{ firma.naziv }} Details{% endblock %}
+{% block content %}
+<h1>{{ firma.naziv }}</h1>
+
+<div class="container mt-4">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <th scope="row">PIB</th>
+        <td>{{ firma.pib }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Naziv</th>
+        <td>{{ firma.naziv }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Adresa</th>
+        <td>{{ firma.adresa }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Djelatnost</th>
+        <td>{{ firma.djelatnost }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Područna Jedinica</th>
+        <td>{{ firma.podrucna_Jedinica }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Datum Registracije</th>
+        <td>{{ firma.datum_reg }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Registarski Broj</th>
+        <td>{{ firma.Reg_br }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Mesto Registracije</th>
+        <td>{{ firma.Mesto_reg }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Registrovan za PDV</th>
+        <td>{{ firma.Registrovan_PDV|yesno:"Yes,No" }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Datum PDV Registracije</th>
+        <td>{{ firma.Datum_PDV }}</td>
+      </tr>
+      <tr>
+        <th scope="row">Broj PDV</th>
+        <td>{{ firma.Broj_PDV }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<a href="{% url 'company_index' %}" class="btn btn-custom mt-3">Back to Company Index</a>
+{% endblock %}
